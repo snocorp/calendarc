@@ -64,3 +64,13 @@ body {
 .calendar-day:nth-child(7n-6) {
   border-left: 1px solid black;
 }
+
+.calendar-today {
+  font-weight: bold;
+}
+
+button.change-month {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+}
