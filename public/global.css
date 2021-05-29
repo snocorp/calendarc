@@ -85,6 +85,15 @@ body {
   font-weight: bold;
 }
 
+.calendar-this-month-day {
+}
+
+.calendar-prev-month-day,
+.calendar-next-month-day {
+  background-color: #eee;
+  color: #888;
+}
+
 button {
   border: 1px solid #ddd;
   border-radius: 4px;

@@ -18,7 +18,12 @@
       }
 
       grid[week][weekday] = {
-        date: curr
+        date: curr,
+        month: curr.hasSame(first, 'month')
+          ? 'this'
+          : curr.get('month') < first.get('month')
+          ? 'prev'
+          : 'next'
       }
 
       curr = curr.plus(Duration.fromObject({ days: 1 }))
@@ -190,7 +195,10 @@
     {/each}
     {#each weeks as week}
       {#each week as day}
-        <div class="calendar-day" class:calendar-today={isToday(day.date)}>
+        <div
+          class="calendar-day calendar-{day.month}-month-day"
+          class:calendar-today={isToday(day.date)}
+        >
           {day.date.toFormat('d')}
         </div>
       {/each}
